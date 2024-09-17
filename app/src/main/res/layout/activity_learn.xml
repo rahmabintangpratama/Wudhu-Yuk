@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/beauBlue"
-    tools:context=".ui.main.MainActivity">
+    tools:context=".ui.learn.LearnActivity">
 
     <ImageView
         android:id="@+id/ivSun"
@@ -39,7 +39,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
         app:layout_constraintDimensionRatio="H,3:1"
-        app:layout_constraintTop_toBottomOf="@id/tvWelcome"
+        app:layout_constraintTop_toBottomOf="@id/ivCloud1"
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/cloud_2"
         android:contentDescription="Cloud 2"
@@ -85,98 +85,70 @@
         android:alpha="1" />
 
     <ImageView
-        android:id="@+id/ivWood"
-        android:layout_width="0dp"
-        android:layout_height="350dp"
-        android:layout_marginBottom="-30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/wood_vertical"
-        android:contentDescription="Wood"
-        android:scaleType="fitCenter"
-        android:adjustViewBounds="true"
-        android:alpha="1" />
-
-    <ImageView
-        android:id="@+id/ivBelajar"
-        android:layout_width="200dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintDimensionRatio="H,3:1"
-        app:layout_constraintTop_toTopOf="@id/ivWood"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/wood_1"
-        android:contentDescription="Belajar"
-        android:alpha="1" />
-
-    <ImageView
-        android:id="@+id/ivBermain"
-        android:layout_width="200dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintDimensionRatio="H,3:1"
-        app:layout_constraintTop_toBottomOf="@id/ivBelajar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/wood_2"
-        android:contentDescription="Bermain"
-        android:alpha="1" />
-
-    <ImageView
-        android:id="@+id/ivTentang"
-        android:layout_width="200dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintDimensionRatio="H,3:1"
-        app:layout_constraintTop_toBottomOf="@id/ivBermain"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/wood_3"
-        android:contentDescription="Tentang"
-        android:alpha="1" />
-
-    <TextView
-        android:id="@+id/tvWelcome"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintTop_toBottomOf="@id/ivCloud1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:textAlignment="center"
-        android:fontFamily="@font/josefin_sans_regular"
-        android:text="Selamat Datang di" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/ivLogo"
+        android:id="@+id/ivTataCaraWudhu"
         android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="8dp"
-        android:src="@mipmap/ic_wudhu_yuk"
-        app:layout_constraintTop_toBottomOf="@id/tvWelcome"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/tvAppName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        app:layout_constraintTop_toBottomOf="@id/ivLogo"
+        android:layout_height="0dp"
+        android:layout_marginTop="-8dp"
+        android:alpha="1"
+        android:contentDescription="Tata Cara Wudhu"
+        android:src="@drawable/tata_cara_wudhu"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintEnd_toStartOf="@id/ivDoaWudhu"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivSyaratWudhu" />
+
+    <ImageView
+        android:id="@+id/ivDoaWudhu"
+        android:layout_width="150dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="-8dp"
+        android:alpha="1"
+        android:contentDescription="Doa Wudhu"
+        android:src="@drawable/doa_wudhu"
+        app:layout_constraintDimensionRatio="H,1:1"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        android:textColor="@color/russet"
-        android:textAlignment="center"
-        android:fontFamily="@font/pacifico_regular"
-        android:text="@string/app_name" />
+        app:layout_constraintStart_toEndOf="@id/ivTataCaraWudhu"
+        app:layout_constraintTop_toBottomOf="@id/ivSyaratWudhu" />
+
+    <ImageView
+        android:id="@+id/ivRukunWudhu"
+        android:layout_width="150dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="-8dp"
+        android:alpha="1"
+        android:contentDescription="Rukun Wudhu"
+        android:src="@drawable/rukun_wudhu"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintEnd_toStartOf="@id/ivSyaratWudhu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivWood" />
+
+    <ImageView
+        android:id="@+id/ivSyaratWudhu"
+        android:layout_width="150dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="-8dp"
+        android:alpha="1"
+        android:contentDescription="Syarat Wudhu"
+        android:src="@drawable/syarat_wudhu"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivRukunWudhu"
+        app:layout_constraintTop_toBottomOf="@id/ivWood" />
+
+    <ImageView
+        android:id="@+id/ivWood"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="-16dp"
+        android:layout_marginEnd="-16dp"
+        android:alpha="1"
+        android:contentDescription="Wood"
+        android:src="@drawable/wood_horizontal"
+        app:layout_constraintDimensionRatio="H,11:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivCloud2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

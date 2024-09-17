@@ -1,13 +1,16 @@
-package com.kiiis.wudhuyuk
+package com.kiiis.wudhuyuk.ui.main
 
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import com.kiiis.wudhuyuk.R
 import com.kiiis.wudhuyuk.databinding.ActivityMainBinding
+import com.kiiis.wudhuyuk.ui.learn.LearnActivity
 import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
@@ -21,6 +24,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         playAnimation()
+
+        binding.ivBelajar.setOnClickListener {
+            startActivity(Intent(this, LearnActivity::class.java))
+        }
 
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
@@ -55,7 +62,6 @@ class MainActivity : AppCompatActivity() {
             repeatMode = ObjectAnimator.REVERSE
         }.start()
 
-
         ObjectAnimator.ofFloat(binding.ivCloud3, View.TRANSLATION_X, 40f, -40f).apply {
             duration = CLOUD_DURATION.toLong()
             repeatCount = ObjectAnimator.INFINITE
@@ -68,19 +74,19 @@ class MainActivity : AppCompatActivity() {
             repeatMode = ObjectAnimator.REVERSE
         }.start()
 
-        ObjectAnimator.ofPropertyValuesHolder(binding.ivWood1, scaleX, scaleY).apply {
+        ObjectAnimator.ofPropertyValuesHolder(binding.ivBelajar, scaleX, scaleY).apply {
             duration = WOOD_DURATION.toLong()
             repeatCount = ObjectAnimator.INFINITE
             repeatMode = ObjectAnimator.REVERSE
         }.start()
 
-        ObjectAnimator.ofPropertyValuesHolder(binding.ivWood2, scaleX, scaleY).apply {
+        ObjectAnimator.ofPropertyValuesHolder(binding.ivBermain, scaleX, scaleY).apply {
             duration = WOOD_DURATION.toLong()
             repeatCount = ObjectAnimator.INFINITE
             repeatMode = ObjectAnimator.REVERSE
         }.start()
 
-        ObjectAnimator.ofPropertyValuesHolder(binding.ivWood3, scaleX, scaleY).apply {
+        ObjectAnimator.ofPropertyValuesHolder(binding.ivTentang, scaleX, scaleY).apply {
             duration = WOOD_DURATION.toLong()
             repeatCount = ObjectAnimator.INFINITE
             repeatMode = ObjectAnimator.REVERSE
@@ -92,6 +98,6 @@ class MainActivity : AppCompatActivity() {
         val scaleY: PropertyValuesHolder = PropertyValuesHolder.ofFloat("scaleY", 1.0f, 1.2f)
         const val SUN_DURATION = 25000
         const val CLOUD_DURATION = 6000
-        const val WOOD_DURATION = 800
+        const val WOOD_DURATION = 1000
     }
 }
