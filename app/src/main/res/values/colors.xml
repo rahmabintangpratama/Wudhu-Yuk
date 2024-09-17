@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="nyanza">#E5F9E0</color>
+    <color name="lightGreen">#A3F7B5</color>
+    <color name="mint">#40C9A2</color>
+    <color name="persianGreen">#2F9C95</color>
+    <color name="roseEbony">#664147</color>
+    <color name="russet">#7B3E19</color>
+    <color name="rosyBrown">#B28B84</color>
+    <color name="palePurple">#F5E5FC</color>
+    <color name="nonPhotoBlue">#8AE1FC</color>
+    <color name="parisBlue">#B7DDED</color>
+    <color name="beauBlue">#BCD4E6</color>
+    <color name="seaBreezeGreen">#C9D9E7</color>
+    <color name="moonstone">#48B8D0</color>
+</resources>
