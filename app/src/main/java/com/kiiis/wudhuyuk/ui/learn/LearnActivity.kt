@@ -6,7 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.kiiis.wudhuyuk.databinding.ActivityLearnBinding
+import com.kiiis.wudhuyuk.ui.batal.BatalActivity
+import com.kiiis.wudhuyuk.ui.doa.DoaActivity
 import com.kiiis.wudhuyuk.ui.meaning.MeaningActivity
+import com.kiiis.wudhuyuk.ui.niat.NiatActivity
+import com.kiiis.wudhuyuk.ui.procedure.ProcedureActivity
+import com.kiiis.wudhuyuk.ui.references.ReferencesActivity
 import com.kiiis.wudhuyuk.ui.rukun.RukunActivity
 import com.kiiis.wudhuyuk.ui.sunnah.SunnahActivity
 import com.kiiis.wudhuyuk.ui.syarat.SyaratActivity
@@ -35,6 +40,26 @@ class LearnActivity : AppCompatActivity() {
 
         binding.ivSyaratWudhu.setOnClickListener {
             startActivity(Intent(this, SyaratActivity::class.java))
+        }
+
+        binding.ivNiatWudhu.setOnClickListener {
+            startActivity(Intent(this, NiatActivity::class.java))
+        }
+
+        binding.ivTataCaraWudhu.setOnClickListener {
+            startActivity(Intent(this, ProcedureActivity::class.java))
+        }
+
+        binding.ivDoaWudhu.setOnClickListener {
+            startActivity(Intent(this, DoaActivity::class.java))
+        }
+
+        binding.ivBatalWudhu.setOnClickListener {
+            startActivity(Intent(this, BatalActivity::class.java))
+        }
+
+        binding.ivDaftarPustaka.setOnClickListener {
+            startActivity(Intent(this, ReferencesActivity::class.java))
         }
     }
 

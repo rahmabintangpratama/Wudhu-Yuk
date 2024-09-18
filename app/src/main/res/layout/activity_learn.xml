@@ -85,6 +85,19 @@
         android:alpha="1" />
 
     <ImageView
+        android:id="@+id/ivDaftarPustaka"
+        android:layout_width="130dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="-8dp"
+        android:alpha="1"
+        android:contentDescription="Daftar Pustaka"
+        android:src="@drawable/daftar_pustaka"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivBatalWudhu" />
+
+    <ImageView
         android:id="@+id/ivDoaWudhu"
         android:layout_width="130dp"
         android:layout_height="0dp"
@@ -94,17 +107,17 @@
         android:src="@drawable/doa_wudhu"
         app:layout_constraintDimensionRatio="H,1:1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/ivDaftarPustaka"
+        app:layout_constraintEnd_toStartOf="@id/ivBatalWudhu"
         app:layout_constraintTop_toBottomOf="@id/ivNiatWudhu" />
 
     <ImageView
-        android:id="@+id/ivDaftarPustaka"
+        android:id="@+id/ivBatalWudhu"
         android:layout_width="130dp"
         android:layout_height="0dp"
         android:layout_marginTop="-8dp"
         android:alpha="1"
-        android:contentDescription="Daftar Pustaka"
-        android:src="@drawable/daftar_pustaka"
+        android:contentDescription="Batal Wudhu"
+        android:src="@drawable/batal_wudhu"
         app:layout_constraintDimensionRatio="H,1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/ivDoaWudhu"
@@ -192,6 +205,7 @@
         android:id="@+id/ivWood"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="24dp"
         android:layout_marginStart="-16dp"
         android:layout_marginEnd="-16dp"
         android:alpha="1"
@@ -200,6 +214,6 @@
         app:layout_constraintDimensionRatio="H,11:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivCloud1" />
+        app:layout_constraintTop_toTopOf="@id/ivCloud1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
