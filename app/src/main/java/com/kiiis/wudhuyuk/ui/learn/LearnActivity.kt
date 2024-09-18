@@ -3,9 +3,13 @@ package com.kiiis.wudhuyuk.ui.learn
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.media.AudioAttributes
+import android.media.MediaPlayer
+import android.media.SoundPool
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import com.kiiis.wudhuyuk.R
 import com.kiiis.wudhuyuk.databinding.ActivityLearnBinding
 import com.kiiis.wudhuyuk.ui.batal.BatalActivity
 import com.kiiis.wudhuyuk.ui.doa.DoaActivity
@@ -19,6 +23,9 @@ import com.kiiis.wudhuyuk.ui.syarat.SyaratActivity
 
 class LearnActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLearnBinding
+    private lateinit var soundPool: SoundPool
+    private var clickSoundId: Int = 0
+    private lateinit var mediaPlayer: MediaPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +33,7 @@ class LearnActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         playAnimation()
+        playAudio()
         setupClickListeners()
     }
 
@@ -67,17 +75,96 @@ class LearnActivity : AppCompatActivity() {
         }.start()
     }
 
+    private fun playAudio() {
+        val audioAttributes = AudioAttributes.Builder()
+            .setUsage(AudioAttributes.USAGE_GAME)
+            .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+            .build()
+        soundPool = SoundPool.Builder()
+            .setMaxStreams(1)
+            .setAudioAttributes(audioAttributes)
+            .build()
+        clickSoundId = soundPool.load(this, R.raw.aud_click, 1)
+        mediaPlayer = MediaPlayer.create(this, R.raw.aud_home)
+        mediaPlayer.isLooping = true
+
+        if (!mediaPlayer.isPlaying) {
+            mediaPlayer.start()
+        }
+    }
+
     private fun setupClickListeners() {
-        binding.ivPengertianWudhu.setOnClickListener { startActivity(Intent(this, MeaningActivity::class.java)) }
-        binding.ivRukunWudhu.setOnClickListener { startActivity(Intent(this, RukunActivity::class.java)) }
-        binding.ivSunnahWudhu.setOnClickListener { startActivity(Intent(this, SunnahActivity::class.java)) }
-        binding.ivSyaratWudhu.setOnClickListener { startActivity(Intent(this, SyaratActivity::class.java)) }
-        binding.ivNiatWudhu.setOnClickListener { startActivity(Intent(this, NiatActivity::class.java)) }
-        binding.ivTataCaraWudhu.setOnClickListener { startActivity(Intent(this, ProcedureActivity::class.java)) }
-        binding.ivDoaWudhu.setOnClickListener { startActivity(Intent(this, DoaActivity::class.java)) }
-        binding.ivBatalWudhu.setOnClickListener { startActivity(Intent(this, BatalActivity::class.java)) }
-        binding.ivDaftarPustaka.setOnClickListener { startActivity(Intent(this, ReferencesActivity::class.java)) }
-        binding.ivBack.setOnClickListener { finish() }
+        binding.ivPengertianWudhu.setOnClickListener {
+            startActivity(Intent(this, MeaningActivity::class.java))
+            soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
+        }
+
+        binding.ivRukunWudhu.setOnClickListener {
+            soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
+            startActivity(Intent(this, RukunActivity::class.java))
+        }
+
+        binding.ivSunnahWudhu.setOnClickListener {
+            soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
+            startActivity(Intent(this, SunnahActivity::class.java))
+        }
+
+        binding.ivSyaratWudhu.setOnClickListener {
+            soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
+            startActivity(Intent(this, SyaratActivity::class.java))
+        }
+
+        binding.ivNiatWudhu.setOnClickListener {
+            soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
+            startActivity(Intent(this, NiatActivity::class.java))
+        }
+
+        binding.ivTataCaraWudhu.setOnClickListener {
+            soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
+            startActivity(Intent(this, ProcedureActivity::class.java))
+        }
+
+        binding.ivDoaWudhu.setOnClickListener {
+            soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
+            startActivity(Intent(this, DoaActivity::class.java))
+        }
+
+        binding.ivBatalWudhu.setOnClickListener {
+            soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
+            startActivity(Intent(this, BatalActivity::class.java))
+        }
+
+        binding.ivDaftarPustaka.setOnClickListener {
+            soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
+            startActivity(Intent(this, ReferencesActivity::class.java))
+        }
+
+        binding.ivBack.setOnClickListener {
+            soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
+            finish()
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        if (mediaPlayer.isPlaying) {
+            mediaPlayer.pause()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (!mediaPlayer.isPlaying) {
+            mediaPlayer.start()
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        soundPool.release()
+        mediaPlayer.stop()
+        mediaPlayer.release()
     }
 
     private companion object {

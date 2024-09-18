@@ -2,17 +2,22 @@ package com.kiiis.wudhuyuk.ui.niat
 
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
+import android.media.AudioAttributes
 import android.media.MediaPlayer
-import androidx.appcompat.app.AppCompatActivity
+import android.media.SoundPool
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.kiiis.wudhuyuk.R
 import com.kiiis.wudhuyuk.databinding.ActivityNiatBinding
 
 class NiatActivity : AppCompatActivity() {
     private lateinit var binding: ActivityNiatBinding
-    private var mediaPlayer: MediaPlayer? = null
-    private var isPlaying = false
+    private lateinit var soundPool: SoundPool
+    private var clickSoundId: Int = 0
+    private var mediaPlayerNiat: MediaPlayer? = null
+    private var mediaPlayerBacksound: MediaPlayer? = null
+    private var isNiatPlaying = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,8 +25,8 @@ class NiatActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         playAnimation()
-        setupAudioPlayer()
-        binding.ivBack.setOnClickListener { finish() }
+        setupAudioPlayers()
+        setupClickListeners()
     }
 
     private fun playAnimation() {
@@ -62,38 +67,88 @@ class NiatActivity : AppCompatActivity() {
         }.start()
     }
 
-    private fun setupAudioPlayer() {
-        mediaPlayer = MediaPlayer.create(this, R.raw.aud_niat_wudhu)
-        mediaPlayer?.setOnCompletionListener {
-            stopAudio()
+    private fun setupAudioPlayers() {
+        val audioAttributes = AudioAttributes.Builder()
+            .setUsage(AudioAttributes.USAGE_GAME)
+            .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+            .build()
+        soundPool = SoundPool.Builder()
+            .setMaxStreams(1)
+            .setAudioAttributes(audioAttributes)
+            .build()
+        clickSoundId = soundPool.load(this, R.raw.aud_click, 1)
+        mediaPlayerNiat = MediaPlayer.create(this, R.raw.aud_niat_wudhu)
+        mediaPlayerBacksound = MediaPlayer.create(this, R.raw.aud_home)
+
+        mediaPlayerNiat?.setOnCompletionListener {
+            stopNiatAudio()
+            startBacksoundAudio()
         }
 
+        mediaPlayerBacksound?.isLooping = true
+        startBacksoundAudio()
+    }
+
+    private fun setupClickListeners() {
         binding.btnPlay.setOnClickListener {
-            if (isPlaying) {
-                stopAudio()
+            soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
+            if (isNiatPlaying) {
+                stopNiatAudio()
+                startBacksoundAudio()
             } else {
-                startAudio()
+                startNiatAudio()
             }
+        }
+
+        binding.ivBack.setOnClickListener {
+            soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
+            finish()
         }
     }
 
-    private fun startAudio() {
-        mediaPlayer?.start()
-        isPlaying = true
+    private fun startNiatAudio() {
+        mediaPlayerBacksound?.pause()
+        mediaPlayerNiat?.start()
+        isNiatPlaying = true
         binding.btnPlay.text = getString(R.string.stop)
     }
 
-    private fun stopAudio() {
-        mediaPlayer?.pause()
-        mediaPlayer?.seekTo(0)
-        isPlaying = false
+    private fun stopNiatAudio() {
+        mediaPlayerNiat?.pause()
+        mediaPlayerNiat?.seekTo(0)
+        isNiatPlaying = false
         binding.btnPlay.text = getString(R.string.play)
+    }
+
+    private fun startBacksoundAudio() {
+        if (mediaPlayerBacksound?.isPlaying == false) {
+            mediaPlayerBacksound?.start()
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        mediaPlayerBacksound?.pause()
+        if (isNiatPlaying) {
+            mediaPlayerNiat?.pause()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (!isNiatPlaying) {
+            startBacksoundAudio()
+        } else {
+            mediaPlayerNiat?.start()
+        }
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        mediaPlayer?.release()
-        mediaPlayer = null
+        mediaPlayerNiat?.release()
+        mediaPlayerNiat = null
+        mediaPlayerBacksound?.release()
+        mediaPlayerBacksound = null
     }
 
     private companion object {

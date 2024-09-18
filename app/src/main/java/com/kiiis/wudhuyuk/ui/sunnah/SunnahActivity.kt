@@ -2,13 +2,20 @@ package com.kiiis.wudhuyuk.ui.sunnah
 
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
-import androidx.appcompat.app.AppCompatActivity
+import android.media.AudioAttributes
+import android.media.MediaPlayer
+import android.media.SoundPool
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import com.kiiis.wudhuyuk.R
 import com.kiiis.wudhuyuk.databinding.ActivitySunnahBinding
 
 class SunnahActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySunnahBinding
+    private lateinit var soundPool: SoundPool
+    private var clickSoundId: Int = 0
+    private lateinit var mediaPlayer: MediaPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,7 +23,12 @@ class SunnahActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         playAnimation()
-        binding.ivBack.setOnClickListener { finish() }
+        playAudio()
+
+        binding.ivBack.setOnClickListener {
+            soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
+            finish()
+        }
     }
 
     private fun playAnimation() {
@@ -55,6 +67,46 @@ class SunnahActivity : AppCompatActivity() {
             repeatCount = ObjectAnimator.INFINITE
             repeatMode = ObjectAnimator.REVERSE
         }.start()
+    }
+
+    private fun playAudio() {
+        val audioAttributes = AudioAttributes.Builder()
+            .setUsage(AudioAttributes.USAGE_GAME)
+            .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+            .build()
+        soundPool = SoundPool.Builder()
+            .setMaxStreams(1)
+            .setAudioAttributes(audioAttributes)
+            .build()
+        clickSoundId = soundPool.load(this, R.raw.aud_click, 1)
+        mediaPlayer = MediaPlayer.create(this, R.raw.aud_home)
+        mediaPlayer.isLooping = true
+
+        if (!mediaPlayer.isPlaying) {
+            mediaPlayer.start()
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        if (mediaPlayer.isPlaying) {
+            mediaPlayer.pause()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (!mediaPlayer.isPlaying) {
+            mediaPlayer.start()
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        soundPool.release()
+        mediaPlayer.stop()
+        mediaPlayer.release()
     }
 
     private companion object {

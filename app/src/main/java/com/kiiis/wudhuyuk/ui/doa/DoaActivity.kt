@@ -2,17 +2,22 @@ package com.kiiis.wudhuyuk.ui.doa
 
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
+import android.media.AudioAttributes
 import android.media.MediaPlayer
-import androidx.appcompat.app.AppCompatActivity
+import android.media.SoundPool
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.kiiis.wudhuyuk.R
 import com.kiiis.wudhuyuk.databinding.ActivityDoaBinding
 
 class DoaActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDoaBinding
-    private var mediaPlayer: MediaPlayer? = null
-    private var isPlaying = false
+    private lateinit var soundPool: SoundPool
+    private var clickSoundId: Int = 0
+    private var mediaPlayerDoa: MediaPlayer? = null
+    private var mediaPlayerBacksound: MediaPlayer? = null
+    private var isDoaPlaying = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,8 +25,8 @@ class DoaActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         playAnimation()
-        setupAudioPlayer()
-        binding.ivBack.setOnClickListener { finish() }
+        setupAudioPlayers()
+        setupClickListeners()
     }
 
     private fun playAnimation() {
@@ -62,38 +67,88 @@ class DoaActivity : AppCompatActivity() {
         }.start()
     }
 
-    private fun setupAudioPlayer() {
-        mediaPlayer = MediaPlayer.create(this, R.raw.aud_doa_wudhu)
-        mediaPlayer?.setOnCompletionListener {
-            stopAudio()
+    private fun setupAudioPlayers() {
+        val audioAttributes = AudioAttributes.Builder()
+            .setUsage(AudioAttributes.USAGE_GAME)
+            .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+            .build()
+        soundPool = SoundPool.Builder()
+            .setMaxStreams(1)
+            .setAudioAttributes(audioAttributes)
+            .build()
+        clickSoundId = soundPool.load(this, R.raw.aud_click, 1)
+        mediaPlayerDoa = MediaPlayer.create(this, R.raw.aud_doa_wudhu)
+        mediaPlayerBacksound = MediaPlayer.create(this, R.raw.aud_home)
+
+        mediaPlayerDoa?.setOnCompletionListener {
+            stopDoaAudio()
+            startBacksoundAudio()
         }
 
+        mediaPlayerBacksound?.isLooping = true
+        startBacksoundAudio()
+    }
+
+    private fun setupClickListeners() {
         binding.btnPlay.setOnClickListener {
-            if (isPlaying) {
-                stopAudio()
+            soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
+            if (isDoaPlaying) {
+                stopDoaAudio()
+                startBacksoundAudio()
             } else {
-                startAudio()
+                startDoaAudio()
             }
+        }
+
+        binding.ivBack.setOnClickListener {
+            soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
+            finish()
         }
     }
 
-    private fun startAudio() {
-        mediaPlayer?.start()
-        isPlaying = true
+    private fun startDoaAudio() {
+        mediaPlayerBacksound?.pause()
+        mediaPlayerDoa?.start()
+        isDoaPlaying = true
         binding.btnPlay.text = getString(R.string.stop)
     }
 
-    private fun stopAudio() {
-        mediaPlayer?.pause()
-        mediaPlayer?.seekTo(0)
-        isPlaying = false
+    private fun stopDoaAudio() {
+        mediaPlayerDoa?.pause()
+        mediaPlayerDoa?.seekTo(0)
+        isDoaPlaying = false
         binding.btnPlay.text = getString(R.string.play)
+    }
+
+    private fun startBacksoundAudio() {
+        if (mediaPlayerBacksound?.isPlaying == false) {
+            mediaPlayerBacksound?.start()
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        mediaPlayerBacksound?.pause()
+        if (isDoaPlaying) {
+            mediaPlayerDoa?.pause()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (!isDoaPlaying) {
+            startBacksoundAudio()
+        } else {
+            mediaPlayerDoa?.start()
+        }
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        mediaPlayer?.release()
-        mediaPlayer = null
+        mediaPlayerDoa?.release()
+        mediaPlayerDoa = null
+        mediaPlayerBacksound?.release()
+        mediaPlayerBacksound = null
     }
 
     private companion object {

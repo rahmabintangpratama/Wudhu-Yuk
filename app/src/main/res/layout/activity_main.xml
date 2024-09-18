@@ -152,7 +152,7 @@
         android:textColor="@color/black"
         android:textAlignment="center"
         android:fontFamily="@font/josefin_sans_regular"
-        android:text="Selamat Datang di" />
+        android:text="@string/welcome" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/ivLogo"

@@ -3,11 +3,14 @@ package com.kiiis.wudhuyuk.ui.main
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.media.AudioAttributes
+import android.media.MediaPlayer
+import android.media.SoundPool
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AppCompatActivity
 import com.kiiis.wudhuyuk.R
 import com.kiiis.wudhuyuk.databinding.ActivityMainBinding
 import com.kiiis.wudhuyuk.ui.learn.LearnActivity
@@ -17,6 +20,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private var backPressedTime: Long = 0
     private val backPressedInterval: Long = 2000
+    private lateinit var soundPool: SoundPool
+    private var clickSoundId: Int = 0
+    private lateinit var mediaPlayer: MediaPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,23 +30,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         playAnimation()
-
-        binding.ivBelajar.setOnClickListener {
-            startActivity(Intent(this, LearnActivity::class.java))
-        }
-
-        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                if (backPressedTime + backPressedInterval > System.currentTimeMillis()) {
-                    finishAffinity()
-                    exitProcess(0)
-                } else {
-                    Toast.makeText(this@MainActivity, getString(R.string.exit), Toast.LENGTH_SHORT)
-                        .show()
-                }
-                backPressedTime = System.currentTimeMillis()
-            }
-        })
+        playAudio()
+        setupClickListeners()
     }
 
     private fun playAnimation() {
@@ -91,6 +82,75 @@ class MainActivity : AppCompatActivity() {
             repeatCount = ObjectAnimator.INFINITE
             repeatMode = ObjectAnimator.REVERSE
         }.start()
+    }
+
+    private fun playAudio() {
+        val audioAttributes = AudioAttributes.Builder()
+            .setUsage(AudioAttributes.USAGE_GAME)
+            .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+            .build()
+        soundPool = SoundPool.Builder()
+            .setMaxStreams(1)
+            .setAudioAttributes(audioAttributes)
+            .build()
+        clickSoundId = soundPool.load(this, R.raw.aud_click, 1)
+        mediaPlayer = MediaPlayer.create(this, R.raw.aud_home)
+        mediaPlayer.isLooping = true
+
+        if (!mediaPlayer.isPlaying) {
+            mediaPlayer.start()
+        }
+    }
+
+    private fun setupClickListeners() {
+
+        binding.ivBelajar.setOnClickListener {
+            soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
+            startActivity(Intent(this, LearnActivity::class.java))
+        }
+
+        binding.ivBermain.setOnClickListener {
+            soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
+        }
+
+        binding.ivTentang.setOnClickListener {
+            soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
+        }
+
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                if (backPressedTime + backPressedInterval > System.currentTimeMillis()) {
+                    finishAffinity()
+                    exitProcess(0)
+                } else {
+                    Toast.makeText(this@MainActivity, getString(R.string.exit), Toast.LENGTH_SHORT)
+                        .show()
+                }
+                backPressedTime = System.currentTimeMillis()
+            }
+        })
+    }
+
+    override fun onPause() {
+        super.onPause()
+        if (mediaPlayer.isPlaying) {
+            mediaPlayer.pause()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (!mediaPlayer.isPlaying) {
+            mediaPlayer.start()
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        soundPool.release()
+        mediaPlayer.stop()
+        mediaPlayer.release()
     }
 
     private companion object {
