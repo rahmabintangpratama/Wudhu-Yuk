@@ -1,41 +1,20 @@
-package com.kiiis.wudhuyuk.ui.learn
+package com.kiiis.wudhuyuk.ui.syarat
 
 import android.animation.ObjectAnimator
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.kiiis.wudhuyuk.databinding.ActivityLearnBinding
-import com.kiiis.wudhuyuk.ui.meaning.MeaningActivity
-import com.kiiis.wudhuyuk.ui.rukun.RukunActivity
-import com.kiiis.wudhuyuk.ui.sunnah.SunnahActivity
-import com.kiiis.wudhuyuk.ui.syarat.SyaratActivity
+import com.kiiis.wudhuyuk.databinding.ActivitySyaratBinding
 
-class LearnActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityLearnBinding
+class SyaratActivity : AppCompatActivity() {
+    private lateinit var binding: ActivitySyaratBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityLearnBinding.inflate(layoutInflater)
+        binding = ActivitySyaratBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         playAnimation()
-
-        binding.ivPengertianWudhu.setOnClickListener {
-            startActivity(Intent(this, MeaningActivity::class.java))
-        }
-
-        binding.ivRukunWudhu.setOnClickListener {
-            startActivity(Intent(this, RukunActivity::class.java))
-        }
-
-        binding.ivSunnahWudhu.setOnClickListener {
-            startActivity(Intent(this, SunnahActivity::class.java))
-        }
-
-        binding.ivSyaratWudhu.setOnClickListener {
-            startActivity(Intent(this, SyaratActivity::class.java))
-        }
     }
 
     private fun playAnimation() {
