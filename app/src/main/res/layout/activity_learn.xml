@@ -85,47 +85,73 @@
         android:alpha="1" />
 
     <ImageView
-        android:id="@+id/ivTataCaraWudhu"
-        android:layout_width="150dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="-8dp"
-        android:alpha="1"
-        android:contentDescription="Tata Cara Wudhu"
-        android:src="@drawable/tata_cara_wudhu"
-        app:layout_constraintDimensionRatio="H,1:1"
-        app:layout_constraintEnd_toStartOf="@id/ivDoaWudhu"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivSyaratWudhu" />
-
-    <ImageView
         android:id="@+id/ivDoaWudhu"
-        android:layout_width="150dp"
+        android:layout_width="130dp"
         android:layout_height="0dp"
         android:layout_marginTop="-8dp"
         android:alpha="1"
         android:contentDescription="Doa Wudhu"
         android:src="@drawable/doa_wudhu"
         app:layout_constraintDimensionRatio="H,1:1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/ivTataCaraWudhu"
-        app:layout_constraintTop_toBottomOf="@id/ivSyaratWudhu" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ivDaftarPustaka"
+        app:layout_constraintTop_toBottomOf="@id/ivNiatWudhu" />
 
     <ImageView
-        android:id="@+id/ivRukunWudhu"
-        android:layout_width="150dp"
+        android:id="@+id/ivDaftarPustaka"
+        android:layout_width="130dp"
         android:layout_height="0dp"
         android:layout_marginTop="-8dp"
         android:alpha="1"
-        android:contentDescription="Rukun Wudhu"
-        android:src="@drawable/rukun_wudhu"
+        android:contentDescription="Daftar Pustaka"
+        android:src="@drawable/daftar_pustaka"
         app:layout_constraintDimensionRatio="H,1:1"
-        app:layout_constraintEnd_toStartOf="@id/ivSyaratWudhu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivDoaWudhu"
+        app:layout_constraintTop_toBottomOf="@id/ivTataCaraWudhu" />
+
+    <ImageView
+        android:id="@+id/ivNiatWudhu"
+        android:layout_width="130dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="-8dp"
+        android:alpha="1"
+        android:contentDescription="Niat Wudhu"
+        android:src="@drawable/niat_wudhu"
+        app:layout_constraintDimensionRatio="H,1:1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivWood" />
+        app:layout_constraintEnd_toStartOf="@id/ivTataCaraWudhu"
+        app:layout_constraintTop_toBottomOf="@id/ivSunnahWudhu" />
+
+    <ImageView
+        android:id="@+id/ivTataCaraWudhu"
+        android:layout_width="130dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="-8dp"
+        android:alpha="1"
+        android:contentDescription="Tata Cara Wudhu"
+        android:src="@drawable/tata_cara_wudhu"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivNiatWudhu"
+        app:layout_constraintTop_toBottomOf="@id/ivSyaratWudhu" />
+
+    <ImageView
+        android:id="@+id/ivSunnahWudhu"
+        android:layout_width="130dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="-8dp"
+        android:alpha="1"
+        android:contentDescription="Sunnah Wudhu"
+        android:src="@drawable/sunnah_wudhu"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ivSyaratWudhu"
+        app:layout_constraintTop_toBottomOf="@id/ivPengertianWudhu" />
 
     <ImageView
         android:id="@+id/ivSyaratWudhu"
-        android:layout_width="150dp"
+        android:layout_width="130dp"
         android:layout_height="0dp"
         android:layout_marginTop="-8dp"
         android:alpha="1"
@@ -133,14 +159,39 @@
         android:src="@drawable/syarat_wudhu"
         app:layout_constraintDimensionRatio="H,1:1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/ivRukunWudhu"
+        app:layout_constraintStart_toEndOf="@id/ivSunnahWudhu"
+        app:layout_constraintTop_toBottomOf="@id/ivRukunWudhu" />
+
+    <ImageView
+        android:id="@+id/ivPengertianWudhu"
+        android:layout_width="130dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="-8dp"
+        android:alpha="1"
+        android:contentDescription="Pengertian Wudhu"
+        android:src="@drawable/pengertian_wudhu"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintEnd_toStartOf="@id/ivRukunWudhu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivWood" />
+
+    <ImageView
+        android:id="@+id/ivRukunWudhu"
+        android:layout_width="130dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="-8dp"
+        android:alpha="1"
+        android:contentDescription="Rukun Wudhu"
+        android:src="@drawable/rukun_wudhu"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivPengertianWudhu"
         app:layout_constraintTop_toBottomOf="@id/ivWood" />
 
     <ImageView
         android:id="@+id/ivWood"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
         android:layout_marginStart="-16dp"
         android:layout_marginEnd="-16dp"
         android:alpha="1"
@@ -149,6 +200,6 @@
         app:layout_constraintDimensionRatio="H,11:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ivCloud2" />
+        app:layout_constraintTop_toBottomOf="@id/ivCloud1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
