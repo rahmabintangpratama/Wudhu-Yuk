@@ -1,6 +1,7 @@
 package com.kiiis.wudhuyuk.ui.procedure
 
 import android.animation.ObjectAnimator
+import android.animation.PropertyValuesHolder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -15,6 +16,7 @@ class ProcedureActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         playAnimation()
+        binding.ivBack.setOnClickListener { finish() }
     }
 
     private fun playAnimation() {
@@ -47,10 +49,19 @@ class ProcedureActivity : AppCompatActivity() {
             repeatCount = ObjectAnimator.INFINITE
             repeatMode = ObjectAnimator.REVERSE
         }.start()
+
+        ObjectAnimator.ofPropertyValuesHolder(binding.ivBack, scaleX, scaleY).apply {
+            duration = WOOD_DURATION.toLong()
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+        }.start()
     }
 
     private companion object {
+        val scaleX: PropertyValuesHolder = PropertyValuesHolder.ofFloat("scaleX", 1.0f, 1.15f)
+        val scaleY: PropertyValuesHolder = PropertyValuesHolder.ofFloat("scaleY", 1.0f, 1.15f)
         const val SUN_DURATION = 25000
         const val CLOUD_DURATION = 6000
+        const val WOOD_DURATION = 1000
     }
 }

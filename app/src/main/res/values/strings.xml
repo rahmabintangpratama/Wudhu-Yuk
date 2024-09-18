@@ -31,4 +31,6 @@
     <string name="references_field"><![CDATA[[1] A. A. M. Azzam dan A. W. S. Hawwaz, Fiqh Ibadah, Jakarta: AMZAH, 2009. \n[2] M. Ajib, Fiqih Wudhu Versi Madzhab Syafi\'iy, Jakarta: Rumah Fiqih Publishing, 2019. \n[3] M. BK, “Wudhu: Niat, Tata Cara, Doa, dan Keutamaannya,” 21 Agustus 2024. [Online]. Available: https://bersamadakwah.net/wudhu/.\n[4] A. Syah, Aku Pandai Sholat, LAKSANA, 2019. \n[5] Yudi, “Tata Cara Wudhu, Lengkap dengan Bacaan Arab, Latin, Arti, Niat dan Doa Tiap Gerakannya,” 22 Juli 2022. [Online]. Available: https://www.islampos.com/tata-cara-wudhu-256664/.\n[6] A. Hamid, Ansori dan S. A. Farisi, Buku Tuntunan Supermudah & Lengkap Shalat Wajib & Sunnah Sesuai Tuntunan Rasulullah, Jakarta: QultumMedia, 2023.]]></string>
     <string name="batal_wudhu">Hal-Hal Yang Membatalkan Wudhu</string>
     <string name="batal_wudhu_field">1. Keluar sesuatu dari lubang anus dan kemaluan, kecuali air mani\n2. Hilang akal\n3. Bersentuhan kulit laki-laki dan perempuan yang bukan mahramnya\n4. Menyentuh kemaluan dengan telapak tangan</string>
+    <string name="wood_horizontal">Wood Horizontal</string>
+    <string name="back">Back</string>
 </resources>

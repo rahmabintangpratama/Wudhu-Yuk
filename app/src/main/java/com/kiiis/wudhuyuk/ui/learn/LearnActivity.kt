@@ -1,6 +1,7 @@
 package com.kiiis.wudhuyuk.ui.learn
 
 import android.animation.ObjectAnimator
+import android.animation.PropertyValuesHolder
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -25,42 +26,7 @@ class LearnActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         playAnimation()
-
-        binding.ivPengertianWudhu.setOnClickListener {
-            startActivity(Intent(this, MeaningActivity::class.java))
-        }
-
-        binding.ivRukunWudhu.setOnClickListener {
-            startActivity(Intent(this, RukunActivity::class.java))
-        }
-
-        binding.ivSunnahWudhu.setOnClickListener {
-            startActivity(Intent(this, SunnahActivity::class.java))
-        }
-
-        binding.ivSyaratWudhu.setOnClickListener {
-            startActivity(Intent(this, SyaratActivity::class.java))
-        }
-
-        binding.ivNiatWudhu.setOnClickListener {
-            startActivity(Intent(this, NiatActivity::class.java))
-        }
-
-        binding.ivTataCaraWudhu.setOnClickListener {
-            startActivity(Intent(this, ProcedureActivity::class.java))
-        }
-
-        binding.ivDoaWudhu.setOnClickListener {
-            startActivity(Intent(this, DoaActivity::class.java))
-        }
-
-        binding.ivBatalWudhu.setOnClickListener {
-            startActivity(Intent(this, BatalActivity::class.java))
-        }
-
-        binding.ivDaftarPustaka.setOnClickListener {
-            startActivity(Intent(this, ReferencesActivity::class.java))
-        }
+        setupClickListeners()
     }
 
     private fun playAnimation() {
@@ -93,10 +59,32 @@ class LearnActivity : AppCompatActivity() {
             repeatCount = ObjectAnimator.INFINITE
             repeatMode = ObjectAnimator.REVERSE
         }.start()
+
+        ObjectAnimator.ofPropertyValuesHolder(binding.ivBack, scaleX, scaleY).apply {
+            duration = WOOD_DURATION.toLong()
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+        }.start()
+    }
+
+    private fun setupClickListeners() {
+        binding.ivPengertianWudhu.setOnClickListener { startActivity(Intent(this, MeaningActivity::class.java)) }
+        binding.ivRukunWudhu.setOnClickListener { startActivity(Intent(this, RukunActivity::class.java)) }
+        binding.ivSunnahWudhu.setOnClickListener { startActivity(Intent(this, SunnahActivity::class.java)) }
+        binding.ivSyaratWudhu.setOnClickListener { startActivity(Intent(this, SyaratActivity::class.java)) }
+        binding.ivNiatWudhu.setOnClickListener { startActivity(Intent(this, NiatActivity::class.java)) }
+        binding.ivTataCaraWudhu.setOnClickListener { startActivity(Intent(this, ProcedureActivity::class.java)) }
+        binding.ivDoaWudhu.setOnClickListener { startActivity(Intent(this, DoaActivity::class.java)) }
+        binding.ivBatalWudhu.setOnClickListener { startActivity(Intent(this, BatalActivity::class.java)) }
+        binding.ivDaftarPustaka.setOnClickListener { startActivity(Intent(this, ReferencesActivity::class.java)) }
+        binding.ivBack.setOnClickListener { finish() }
     }
 
     private companion object {
+        val scaleX: PropertyValuesHolder = PropertyValuesHolder.ofFloat("scaleX", 1.0f, 1.15f)
+        val scaleY: PropertyValuesHolder = PropertyValuesHolder.ofFloat("scaleY", 1.0f, 1.15f)
         const val SUN_DURATION = 25000
         const val CLOUD_DURATION = 6000
+        const val WOOD_DURATION = 1000
     }
 }

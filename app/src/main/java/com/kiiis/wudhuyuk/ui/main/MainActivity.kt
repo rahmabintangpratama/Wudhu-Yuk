@@ -94,8 +94,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private companion object {
-        val scaleX: PropertyValuesHolder = PropertyValuesHolder.ofFloat("scaleX", 1.0f, 1.2f)
-        val scaleY: PropertyValuesHolder = PropertyValuesHolder.ofFloat("scaleY", 1.0f, 1.2f)
+        val scaleX: PropertyValuesHolder = PropertyValuesHolder.ofFloat("scaleX", 1.0f, 1.15f)
+        val scaleY: PropertyValuesHolder = PropertyValuesHolder.ofFloat("scaleY", 1.0f, 1.15f)
         const val SUN_DURATION = 25000
         const val CLOUD_DURATION = 6000
         const val WOOD_DURATION = 1000

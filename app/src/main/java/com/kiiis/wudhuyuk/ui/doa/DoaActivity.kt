@@ -1,6 +1,7 @@
 package com.kiiis.wudhuyuk.ui.doa
 
 import android.animation.ObjectAnimator
+import android.animation.PropertyValuesHolder
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -20,6 +21,7 @@ class DoaActivity : AppCompatActivity() {
 
         playAnimation()
         setupAudioPlayer()
+        binding.ivBack.setOnClickListener { finish() }
     }
 
     private fun playAnimation() {
@@ -49,6 +51,12 @@ class DoaActivity : AppCompatActivity() {
 
         ObjectAnimator.ofFloat(binding.ivCloud4, View.TRANSLATION_X, 40f, -40f).apply {
             duration = CLOUD_DURATION.toLong()
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+        }.start()
+
+        ObjectAnimator.ofPropertyValuesHolder(binding.ivBack, scaleX, scaleY).apply {
+            duration = WOOD_DURATION.toLong()
             repeatCount = ObjectAnimator.INFINITE
             repeatMode = ObjectAnimator.REVERSE
         }.start()
@@ -89,7 +97,10 @@ class DoaActivity : AppCompatActivity() {
     }
 
     private companion object {
+        val scaleX: PropertyValuesHolder = PropertyValuesHolder.ofFloat("scaleX", 1.0f, 1.15f)
+        val scaleY: PropertyValuesHolder = PropertyValuesHolder.ofFloat("scaleY", 1.0f, 1.15f)
         const val SUN_DURATION = 25000
         const val CLOUD_DURATION = 6000
+        const val WOOD_DURATION = 1000
     }
 }
