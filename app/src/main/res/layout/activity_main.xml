@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/sun"
-        android:contentDescription="Sun"
+        android:contentDescription="@string/sun"
         android:alpha="1" />
 
     <ImageView
@@ -30,7 +30,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:src="@drawable/cloud_1"
-        android:contentDescription="Cloud 1"
+        android:contentDescription="@string/cloud_1"
         android:alpha="1" />
 
     <ImageView
@@ -42,7 +42,7 @@
         app:layout_constraintTop_toBottomOf="@id/tvWelcome"
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/cloud_2"
-        android:contentDescription="Cloud 2"
+        android:contentDescription="@string/cloud_2"
         android:alpha="0.75" />
 
     <ImageView
@@ -55,7 +55,7 @@
         app:layout_constraintTop_toBottomOf="@id/ivCloud2"
         app:layout_constraintStart_toStartOf="parent"
         android:src="@drawable/cloud_3"
-        android:contentDescription="Cloud 3"
+        android:contentDescription="@string/cloud_3"
         android:alpha="0.5" />
 
     <ImageView
@@ -68,7 +68,7 @@
         app:layout_constraintTop_toBottomOf="@id/ivCloud3"
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/cloud_4"
-        android:contentDescription="Cloud 4"
+        android:contentDescription="@string/cloud_4"
         android:alpha="0.25" />
 
     <ImageView
@@ -79,7 +79,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/ground"
-        android:contentDescription="Ground"
+        android:contentDescription="@string/ground"
         android:scaleType="fitCenter"
         android:adjustViewBounds="true"
         android:alpha="1" />
@@ -93,7 +93,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/wood_vertical"
-        android:contentDescription="Wood"
+        android:contentDescription="@string/wood_vertical"
         android:scaleType="fitCenter"
         android:adjustViewBounds="true"
         android:alpha="1" />
@@ -108,7 +108,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/wood_1"
-        android:contentDescription="Belajar"
+        android:contentDescription="@string/belajar"
         android:alpha="1" />
 
     <ImageView
@@ -121,7 +121,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/wood_2"
-        android:contentDescription="Bermain"
+        android:contentDescription="@string/bermain"
         android:alpha="1" />
 
     <ImageView
@@ -134,7 +134,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/wood_3"
-        android:contentDescription="Tentang"
+        android:contentDescription="@string/tentang"
         android:alpha="1" />
 
     <TextView

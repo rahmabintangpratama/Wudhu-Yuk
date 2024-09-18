@@ -1,4 +1,16 @@
 <resources>
     <string name="app_name">Wudhu Yuk</string>
     <string name="exit">Tekan sekali lagi untuk keluar</string>
+    <string name="sun">Sun</string>
+    <string name="cloud_1">Cloud 1</string>
+    <string name="cloud_2">Cloud 2</string>
+    <string name="cloud_3">Cloud 3</string>
+    <string name="cloud_4">Cloud 4</string>
+    <string name="ground">Ground</string>
+    <string name="wood_vertical">Wood Vertical</string>
+    <string name="belajar">Belajar</string>
+    <string name="bermain">Bermain</string>
+    <string name="tentang">Tentang</string>
+    <string name="pengertian_wudhu">Pengertian Wudhu</string>
+    <string name="pengertian_wudhu_field">Wudhu secara Bahasa (etimologi) diambil dari lafal Al-Wadha’ah yang artinya bagus dan bersih. Sedangkan menurut terminologi syara’, wudhu berarti aktivitas bersuci dengan media air yang berhubungan dengan empat anggota tubuh: muka, kedua tangan, kepala, dan kedua kaki.</string>
 </resources>

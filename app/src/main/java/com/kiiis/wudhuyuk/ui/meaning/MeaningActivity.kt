@@ -1,26 +1,20 @@
-package com.kiiis.wudhuyuk.ui.learn
+package com.kiiis.wudhuyuk.ui.meaning
 
 import android.animation.ObjectAnimator
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.kiiis.wudhuyuk.databinding.ActivityLearnBinding
-import com.kiiis.wudhuyuk.ui.meaning.MeaningActivity
+import com.kiiis.wudhuyuk.databinding.ActivityMeaningBinding
 
-class LearnActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityLearnBinding
+class MeaningActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMeaningBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityLearnBinding.inflate(layoutInflater)
+        binding = ActivityMeaningBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         playAnimation()
-
-        binding.ivPengertianWudhu.setOnClickListener {
-            startActivity(Intent(this, MeaningActivity::class.java))
-        }
     }
 
     private fun playAnimation() {
