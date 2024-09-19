@@ -1,11 +1,12 @@
 package com.kiiis.wudhuyuk.ui.game
 
 import android.animation.ObjectAnimator
+import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.media.SoundPool
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -13,8 +14,10 @@ import android.view.View
 import android.widget.ImageView
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import com.kiiis.wudhuyuk.R
 import com.kiiis.wudhuyuk.databinding.ActivityStageCBinding
+import com.kiiis.wudhuyuk.settings.FontScaleSetting
 import com.kiiis.wudhuyuk.ui.main.MainActivity
 import com.kiiis.wudhuyuk.ui.result.ResultActivity
 import kotlin.random.Random
@@ -33,6 +36,15 @@ class StageCActivity : AppCompatActivity() {
     private lateinit var mediaPlayer: MediaPlayer
     private var scoreA = 0
     private var scoreB = 0
+
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(FontScaleSetting.updateBaseContextLocale(newBase))
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        FontScaleSetting.resetFontScale(this)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

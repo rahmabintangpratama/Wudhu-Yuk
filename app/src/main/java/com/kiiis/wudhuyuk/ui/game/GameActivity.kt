@@ -3,17 +3,20 @@ package com.kiiis.wudhuyuk.ui.game
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
+import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.media.SoundPool
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.kiiis.wudhuyuk.R
 import com.kiiis.wudhuyuk.databinding.ActivityGameBinding
+import com.kiiis.wudhuyuk.settings.FontScaleSetting
 
 class GameActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGameBinding
@@ -23,6 +26,15 @@ class GameActivity : AppCompatActivity() {
     private lateinit var mediaPlayer: MediaPlayer
     private val animationDuration: Long = 1000
     private val transitionDelay: Long = 300
+
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(FontScaleSetting.updateBaseContextLocale(newBase))
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        FontScaleSetting.resetFontScale(this)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -253,8 +265,10 @@ class GameActivity : AppCompatActivity() {
     }
 
     companion object {
-        private val scaleX: PropertyValuesHolder = PropertyValuesHolder.ofFloat("scaleX", 1.0f, 1.15f)
-        private val scaleY: PropertyValuesHolder = PropertyValuesHolder.ofFloat("scaleY", 1.0f, 1.15f)
+        private val scaleX: PropertyValuesHolder =
+            PropertyValuesHolder.ofFloat("scaleX", 1.0f, 1.15f)
+        private val scaleY: PropertyValuesHolder =
+            PropertyValuesHolder.ofFloat("scaleY", 1.0f, 1.15f)
         private const val SUN_DURATION = 25000
         private const val CLOUD_DURATION = 6000
         private const val WOOD_DURATION = 1000

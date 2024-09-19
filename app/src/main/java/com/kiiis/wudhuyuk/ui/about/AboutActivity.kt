@@ -1,4 +1,4 @@
-package com.kiiis.wudhuyuk.ui.rukun
+package com.kiiis.wudhuyuk.ui.about
 
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
@@ -11,11 +11,11 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.kiiis.wudhuyuk.R
-import com.kiiis.wudhuyuk.databinding.ActivityRukunBinding
+import com.kiiis.wudhuyuk.databinding.ActivityAboutBinding
 import com.kiiis.wudhuyuk.settings.FontScaleSetting
 
-class RukunActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityRukunBinding
+class AboutActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityAboutBinding
     private lateinit var soundPool: SoundPool
     private var clickSoundId: Int = 0
     private lateinit var mediaPlayer: MediaPlayer
@@ -31,7 +31,7 @@ class RukunActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityRukunBinding.inflate(layoutInflater)
+        binding = ActivityAboutBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         playAnimation()

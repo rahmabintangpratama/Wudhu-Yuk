@@ -2,16 +2,19 @@ package com.kiiis.wudhuyuk.ui.result
 
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
+import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.media.SoundPool
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AppCompatActivity
 import com.kiiis.wudhuyuk.R
 import com.kiiis.wudhuyuk.databinding.ActivityResultBinding
+import com.kiiis.wudhuyuk.settings.FontScaleSetting
 import com.kiiis.wudhuyuk.ui.main.MainActivity
 
 class ResultActivity : AppCompatActivity() {
@@ -19,6 +22,15 @@ class ResultActivity : AppCompatActivity() {
     private lateinit var soundPool: SoundPool
     private var clickSoundId: Int = 0
     private lateinit var mediaPlayer: MediaPlayer
+
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(FontScaleSetting.updateBaseContextLocale(newBase))
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        FontScaleSetting.resetFontScale(this)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
