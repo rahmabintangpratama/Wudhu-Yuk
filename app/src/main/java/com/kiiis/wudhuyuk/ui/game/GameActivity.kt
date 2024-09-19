@@ -14,7 +14,6 @@ import android.os.Looper
 import android.view.View
 import com.kiiis.wudhuyuk.R
 import com.kiiis.wudhuyuk.databinding.ActivityGameBinding
-import com.kiiis.wudhuyuk.ui.learn.LearnActivity
 
 class GameActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGameBinding
@@ -88,7 +87,7 @@ class GameActivity : AppCompatActivity() {
         binding.tvNext4.setOnClickListener {
             soundPool.play(startSoundId, 1f, 1f, 1, 0, 1f)
             disableNextButtons()
-            startActivity(Intent(this, LearnActivity::class.java))
+            startActivity(Intent(this, StageAActivity::class.java))
         }
 
         binding.ivBack.setOnClickListener {
@@ -207,6 +206,30 @@ class GameActivity : AppCompatActivity() {
         }.start()
 
         ObjectAnimator.ofPropertyValuesHolder(binding.ivBack, scaleX, scaleY).apply {
+            duration = WOOD_DURATION.toLong()
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+        }.start()
+
+        ObjectAnimator.ofPropertyValuesHolder(binding.tvNext1, scaleX, scaleY).apply {
+            duration = WOOD_DURATION.toLong()
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+        }.start()
+
+        ObjectAnimator.ofPropertyValuesHolder(binding.tvNext2, scaleX, scaleY).apply {
+            duration = WOOD_DURATION.toLong()
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+        }.start()
+
+        ObjectAnimator.ofPropertyValuesHolder(binding.tvNext3, scaleX, scaleY).apply {
+            duration = WOOD_DURATION.toLong()
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+        }.start()
+
+        ObjectAnimator.ofPropertyValuesHolder(binding.tvNext4, scaleX, scaleY).apply {
             duration = WOOD_DURATION.toLong()
             repeatCount = ObjectAnimator.INFINITE
             repeatMode = ObjectAnimator.REVERSE

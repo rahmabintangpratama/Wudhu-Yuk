@@ -15,6 +15,26 @@
         android:theme="@style/Theme.WudhuYuk"
         tools:targetApi="31">
         <activity
+            android:name=".ui.result.ResultActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".ui.game.StageCActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".ui.game.StageBActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".ui.game.StageAActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
             android:name=".ui.game.GameActivity"
             android:exported="false"
             android:screenOrientation="portrait"
