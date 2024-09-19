@@ -13,6 +13,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import com.kiiis.wudhuyuk.R
 import com.kiiis.wudhuyuk.databinding.ActivityMainBinding
+import com.kiiis.wudhuyuk.ui.game.GameActivity
 import com.kiiis.wudhuyuk.ui.learn.LearnActivity
 import kotlin.system.exitProcess
 
@@ -111,6 +112,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.ivBermain.setOnClickListener {
             soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
+            startActivity(Intent(this, GameActivity::class.java))
         }
 
         binding.ivTentang.setOnClickListener {

@@ -15,6 +15,11 @@
         android:theme="@style/Theme.WudhuYuk"
         tools:targetApi="31">
         <activity
+            android:name=".ui.game.GameActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
             android:name=".ui.batal.BatalActivity"
             android:exported="false"
             android:screenOrientation="portrait"

@@ -34,4 +34,11 @@
     <string name="wood_horizontal">Wood Horizontal</string>
     <string name="back">Back</string>
     <string name="welcome">Selamat Datang di</string>
+    <string name="character">Karakter</string>
+    <string name="narration_1">Wah, lihat! Ada apa ini? Kok banyak sekali keran yang menetes di tempat wudhu? Airnya terbuang percuma!\nTeman-teman, sebelum kita sholat, kita harus berwudhu terlebih dahulu. Tapi sayang sekali, kalau keran airnya terus menetes, airnya bisa habis. Padahal air itu sangat penting untuk kita.</string>
+    <string name="next">Lanjut ⨠⨠⨠</string>
+    <string name="narration_2">Ayo, kita jadi penjaga air yang baik! Tugas kita adalah menutup semua keran yang terbuka agar airnya tidak terbuang sia-sia.\nDi dalam game ini, kalian akan melihat keran-keran yang muncul dan menghilang secara tiba-tiba. Tugas kalian adalah mengetuk keran-keran itu tepat waktu!</string>
+    <string name="narration_3">Setiap keran yang berhasil kalian tutup, kalian akan mendapatkan poin. Semakin banyak poin yang kalian dapat, semakin hebat kalian sebagai penjaga air!\nDengan bermain game ini, kalian tidak hanya belajar tentang pentingnya menghemat air, tapi juga melatih kesabaran dan ketelitian.</string>
+    <string name="narration_4">Siap untuk menjadi penjaga air yang hebat? Ayo, kita mulai petualangannya! Ketuk keran-keran itu secepat mungkin sebelum menghilang!</string>
+    <string name="go">Mainkan ⨠⨠⨠</string>
 </resources>
