@@ -85,6 +85,19 @@
         android:alpha="1" />
 
     <ImageView
+        android:id="@+id/ivKeutamaanWudhu"
+        android:layout_width="130dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="-8dp"
+        android:alpha="1"
+        android:contentDescription="@string/keutamaan_wudhu"
+        android:src="@drawable/keutamaan_wudhu"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintEnd_toStartOf="@id/ivDaftarPustaka"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivDoaWudhu" />
+
+    <ImageView
         android:id="@+id/ivDaftarPustaka"
         android:layout_width="130dp"
         android:layout_height="0dp"
@@ -94,7 +107,7 @@
         android:src="@drawable/daftar_pustaka"
         app:layout_constraintDimensionRatio="H,1:1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivKeutamaanWudhu"
         app:layout_constraintTop_toBottomOf="@id/ivBatalWudhu" />
 
     <ImageView
@@ -205,7 +218,7 @@
         android:id="@+id/ivWood"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginStart="-16dp"
         android:layout_marginEnd="-16dp"
         android:alpha="1"
