@@ -74,6 +74,102 @@ class ProcedureActivity : AppCompatActivity() {
             repeatMode = ObjectAnimator.REVERSE
         }.start()
 
+        ObjectAnimator.ofFloat(binding.ivCloud5, View.TRANSLATION_X, -40f, 40f).apply {
+            duration = CLOUD_DURATION.toLong()
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+        }.start()
+
+        ObjectAnimator.ofFloat(binding.ivCloud6, View.TRANSLATION_X, -40f, 40f).apply {
+            duration = CLOUD_DURATION.toLong()
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+        }.start()
+
+        ObjectAnimator.ofFloat(binding.ivCloud7, View.TRANSLATION_X, 40f, -40f).apply {
+            duration = CLOUD_DURATION.toLong()
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+        }.start()
+
+        ObjectAnimator.ofFloat(binding.ivCloud8, View.TRANSLATION_X, 40f, -40f).apply {
+            duration = CLOUD_DURATION.toLong()
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+        }.start()
+
+        ObjectAnimator.ofFloat(binding.ivCloud9, View.TRANSLATION_X, -40f, 40f).apply {
+            duration = CLOUD_DURATION.toLong()
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+        }.start()
+
+        ObjectAnimator.ofFloat(binding.ivCloud10, View.TRANSLATION_X, -40f, 40f).apply {
+            duration = CLOUD_DURATION.toLong()
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+        }.start()
+
+        ObjectAnimator.ofFloat(binding.ivCloud11, View.TRANSLATION_X, 40f, -40f).apply {
+            duration = CLOUD_DURATION.toLong()
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+        }.start()
+
+        ObjectAnimator.ofFloat(binding.ivCloud12, View.TRANSLATION_X, 40f, -40f).apply {
+            duration = CLOUD_DURATION.toLong()
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+        }.start()
+
+        ObjectAnimator.ofFloat(binding.ivCloud13, View.TRANSLATION_X, -40f, 40f).apply {
+            duration = CLOUD_DURATION.toLong()
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+        }.start()
+
+        ObjectAnimator.ofFloat(binding.ivCloud14, View.TRANSLATION_X, -40f, 40f).apply {
+            duration = CLOUD_DURATION.toLong()
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+        }.start()
+
+        ObjectAnimator.ofFloat(binding.ivCloud15, View.TRANSLATION_X, 40f, -40f).apply {
+            duration = CLOUD_DURATION.toLong()
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+        }.start()
+
+        ObjectAnimator.ofFloat(binding.ivCloud16, View.TRANSLATION_X, 40f, -40f).apply {
+            duration = CLOUD_DURATION.toLong()
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+        }.start()
+
+        ObjectAnimator.ofFloat(binding.ivCloud17, View.TRANSLATION_X, -40f, 40f).apply {
+            duration = CLOUD_DURATION.toLong()
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+        }.start()
+
+        ObjectAnimator.ofFloat(binding.ivCloud18, View.TRANSLATION_X, -40f, 40f).apply {
+            duration = CLOUD_DURATION.toLong()
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+        }.start()
+
+        ObjectAnimator.ofFloat(binding.ivCloud19, View.TRANSLATION_X, 40f, -40f).apply {
+            duration = CLOUD_DURATION.toLong()
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+        }.start()
+
+        ObjectAnimator.ofFloat(binding.ivCloud20, View.TRANSLATION_X, 40f, -40f).apply {
+            duration = CLOUD_DURATION.toLong()
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+        }.start()
+
         ObjectAnimator.ofPropertyValuesHolder(binding.ivBack, scaleX, scaleY).apply {
             duration = WOOD_DURATION.toLong()
             repeatCount = ObjectAnimator.INFINITE

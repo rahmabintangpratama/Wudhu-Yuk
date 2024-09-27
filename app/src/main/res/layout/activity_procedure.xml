@@ -46,7 +46,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:src="@drawable/cloud_2"
             android:contentDescription="@string/cloud_2"
-            android:alpha="0.75" />
+            android:alpha="0.95" />
 
         <ImageView
             android:id="@+id/ivCloud3"
@@ -59,7 +59,7 @@
             app:layout_constraintStart_toStartOf="parent"
             android:src="@drawable/cloud_3"
             android:contentDescription="@string/cloud_3"
-            android:alpha="0.5" />
+            android:alpha="0.9" />
 
         <ImageView
             android:id="@+id/ivCloud4"
@@ -72,7 +72,211 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:src="@drawable/cloud_4"
             android:contentDescription="@string/cloud_4"
+            android:alpha="0.85" />
+
+        <ImageView
+            android:id="@+id/ivCloud5"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintDimensionRatio="H,3:1"
+            app:layout_constraintTop_toBottomOf="@id/ivCloud4"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/cloud_1"
+            android:contentDescription="@string/cloud_5"
+            android:alpha="0.8" />
+
+        <ImageView
+            android:id="@+id/ivCloud6"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintDimensionRatio="H,3:1"
+            app:layout_constraintTop_toBottomOf="@id/ivCloud5"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/cloud_2"
+            android:contentDescription="@string/cloud_6"
+            android:alpha="0.75" />
+
+        <ImageView
+            android:id="@+id/ivCloud7"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintDimensionRatio="H,3:1"
+            app:layout_constraintTop_toBottomOf="@id/ivCloud6"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/cloud_3"
+            android:contentDescription="@string/cloud_7"
+            android:alpha="0.7" />
+
+        <ImageView
+            android:id="@+id/ivCloud8"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintDimensionRatio="H,3:1"
+            app:layout_constraintTop_toBottomOf="@id/ivCloud7"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/cloud_4"
+            android:contentDescription="@string/cloud_8"
+            android:alpha="0.65" />
+
+        <ImageView
+            android:id="@+id/ivCloud9"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintDimensionRatio="H,3:1"
+            app:layout_constraintTop_toBottomOf="@id/ivCloud8"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/cloud_1"
+            android:contentDescription="@string/cloud_9"
+            android:alpha="0.6" />
+
+        <ImageView
+            android:id="@+id/ivCloud10"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintDimensionRatio="H,3:1"
+            app:layout_constraintTop_toBottomOf="@id/ivCloud9"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/cloud_2"
+            android:contentDescription="@string/cloud_10"
+            android:alpha="0.55" />
+
+        <ImageView
+            android:id="@+id/ivCloud11"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintDimensionRatio="H,3:1"
+            app:layout_constraintTop_toBottomOf="@id/ivCloud10"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/cloud_3"
+            android:contentDescription="@string/cloud_11"
+            android:alpha="0.5" />
+
+        <ImageView
+            android:id="@+id/ivCloud12"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintDimensionRatio="H,3:1"
+            app:layout_constraintTop_toBottomOf="@id/ivCloud11"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/cloud_4"
+            android:contentDescription="@string/cloud_12"
+            android:alpha="0.45" />
+
+        <ImageView
+            android:id="@+id/ivCloud13"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintDimensionRatio="H,3:1"
+            app:layout_constraintTop_toBottomOf="@id/ivCloud12"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/cloud_1"
+            android:contentDescription="@string/cloud_13"
+            android:alpha="0.4" />
+
+        <ImageView
+            android:id="@+id/ivCloud14"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintDimensionRatio="H,3:1"
+            app:layout_constraintTop_toBottomOf="@id/ivCloud13"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/cloud_2"
+            android:contentDescription="@string/cloud_14"
+            android:alpha="0.35" />
+
+        <ImageView
+            android:id="@+id/ivCloud15"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintDimensionRatio="H,3:1"
+            app:layout_constraintTop_toBottomOf="@id/ivCloud14"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/cloud_3"
+            android:contentDescription="@string/cloud_15"
+            android:alpha="0.3" />
+
+        <ImageView
+            android:id="@+id/ivCloud16"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintDimensionRatio="H,3:1"
+            app:layout_constraintTop_toBottomOf="@id/ivCloud15"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/cloud_4"
+            android:contentDescription="@string/cloud_16"
             android:alpha="0.25" />
+
+        <ImageView
+            android:id="@+id/ivCloud17"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintDimensionRatio="H,3:1"
+            app:layout_constraintTop_toBottomOf="@id/ivCloud16"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/cloud_4"
+            android:contentDescription="@string/cloud_17"
+            android:alpha="0.2" />
+
+        <ImageView
+            android:id="@+id/ivCloud18"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintDimensionRatio="H,3:1"
+            app:layout_constraintTop_toBottomOf="@id/ivCloud17"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/cloud_1"
+            android:contentDescription="@string/cloud_18"
+            android:alpha="0.15" />
+
+        <ImageView
+            android:id="@+id/ivCloud19"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintDimensionRatio="H,3:1"
+            app:layout_constraintTop_toBottomOf="@id/ivCloud18"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/cloud_2"
+            android:contentDescription="@string/cloud_19"
+            android:alpha="0.1" />
+
+        <ImageView
+            android:id="@+id/ivCloud20"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintDimensionRatio="H,3:1"
+            app:layout_constraintTop_toBottomOf="@id/ivCloud19"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/cloud_3"
+            android:contentDescription="@string/cloud_20"
+            android:alpha="0.05" />
 
         <ImageView
             android:id="@+id/ivGround"
@@ -93,15 +297,14 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginTop="-24dp"
-            android:layout_marginBottom="-24dp"
+            android:layout_marginTop="40dp"
             app:cardBackgroundColor="@android:color/transparent"
             app:cardCornerRadius="16dp"
             app:cardElevation="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/ivGround"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ivSun">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/cardView1">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -120,24 +323,508 @@
                     android:textSize="32sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="24dp"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardView">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_background">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivWudhu1"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="16dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/ic_wudhu_tangan" />
 
                 <TextView
-                    android:id="@+id/tvTataCaraWudhuField"
+                    android:id="@+id/tvWudhu1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="16dp"
                     android:fontFamily="@font/josefin_sans_regular"
-                    android:text="@string/tata_cara_wudhu_field"
+                    android:text="@string/wudhu1"
                     android:textColor="@color/roseEbony"
                     android:textSize="20sp"
                     android:justificationMode="inter_word"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvTataCaraWudhu" />
+                    app:layout_constraintTop_toBottomOf="@id/ivWudhu1" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="24dp"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardView1">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_background">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivWudhu2"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="16dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/ic_wudhu_mulut" />
+
+                <TextView
+                    android:id="@+id/tvWudhu2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/josefin_sans_regular"
+                    android:text="@string/wudhu2"
+                    android:textColor="@color/roseEbony"
+                    android:textSize="20sp"
+                    android:justificationMode="inter_word"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivWudhu2" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="24dp"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardView2">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_background">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivWudhu3"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="16dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/ic_wudhu_hidung" />
+
+                <TextView
+                    android:id="@+id/tvWudhu3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/josefin_sans_regular"
+                    android:text="@string/wudhu3"
+                    android:textColor="@color/roseEbony"
+                    android:textSize="20sp"
+                    android:justificationMode="inter_word"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivWudhu3" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="24dp"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardView3">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_background">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivWudhu4"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="16dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/ic_wudhu_wajah" />
+
+                <TextView
+                    android:id="@+id/tvWudhu4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/josefin_sans_regular"
+                    android:text="@string/wudhu4"
+                    android:textColor="@color/roseEbony"
+                    android:textSize="20sp"
+                    android:justificationMode="inter_word"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivWudhu4" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="24dp"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardView4">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_background">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivWudhu5"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="16dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/ic_wudhu_siku_kanan" />
+
+                <TextView
+                    android:id="@+id/tvWudhu5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/josefin_sans_regular"
+                    android:text="@string/wudhu5"
+                    android:textColor="@color/roseEbony"
+                    android:textSize="20sp"
+                    android:justificationMode="inter_word"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivWudhu5" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="24dp"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardView5">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_background">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivWudhu6"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="16dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/ic_wudhu_siku_kiri" />
+
+                <TextView
+                    android:id="@+id/tvWudhu6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/josefin_sans_regular"
+                    android:text="@string/wudhu6"
+                    android:textColor="@color/roseEbony"
+                    android:textSize="20sp"
+                    android:justificationMode="inter_word"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivWudhu6" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="24dp"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardView6">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_background">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivWudhu7"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="16dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/ic_wudhu_rambut" />
+
+                <TextView
+                    android:id="@+id/tvWudhu7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/josefin_sans_regular"
+                    android:text="@string/wudhu7"
+                    android:textColor="@color/roseEbony"
+                    android:textSize="20sp"
+                    android:justificationMode="inter_word"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivWudhu7" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="24dp"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardView7">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_background">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivWudhu8"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="16dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/ic_wudhu_telinga" />
+
+                <TextView
+                    android:id="@+id/tvWudhu8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/josefin_sans_regular"
+                    android:text="@string/wudhu8"
+                    android:textColor="@color/roseEbony"
+                    android:textSize="20sp"
+                    android:justificationMode="inter_word"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivWudhu8" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="24dp"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/cardView10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardView8">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_background">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivWudhu9"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="16dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/ic_wudhu_kaki_kanan" />
+
+                <TextView
+                    android:id="@+id/tvWudhu9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/josefin_sans_regular"
+                    android:text="@string/wudhu9"
+                    android:textColor="@color/roseEbony"
+                    android:textSize="20sp"
+                    android:justificationMode="inter_word"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivWudhu9" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="24dp"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/ivBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardView9">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_background">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivWudhu10"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="16dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/ic_wudhu_kaki_kiri" />
+
+                <TextView
+                    android:id="@+id/tvWudhu10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/josefin_sans_regular"
+                    android:text="@string/wudhu10"
+                    android:textColor="@color/roseEbony"
+                    android:textSize="20sp"
+                    android:justificationMode="inter_word"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivWudhu10" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
@@ -146,8 +833,10 @@
             android:id="@+id/ivBack"
             android:layout_width="130dp"
             android:layout_height="0dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="40dp"
             app:layout_constraintDimensionRatio="H,3:1"
-            app:layout_constraintTop_toBottomOf="@id/cardView"
+            app:layout_constraintTop_toBottomOf="@id/cardView10"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
