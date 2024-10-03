@@ -43,6 +43,19 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                if (backPressedTime + backPressedInterval > System.currentTimeMillis()) {
+                    finishAffinity()
+                    exitProcess(0)
+                } else {
+                    Toast.makeText(this@MainActivity, getString(R.string.exit), Toast.LENGTH_SHORT)
+                        .show()
+                }
+                backPressedTime = System.currentTimeMillis()
+            }
+        })
+
         playAnimation()
         playAudio()
         setupClickListeners()
@@ -132,19 +145,6 @@ class MainActivity : AppCompatActivity() {
             soundPool.play(clickSoundId, 1f, 1f, 1, 0, 1f)
             startActivity(Intent(this, AboutActivity::class.java))
         }
-
-        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                if (backPressedTime + backPressedInterval > System.currentTimeMillis()) {
-                    finishAffinity()
-                    exitProcess(0)
-                } else {
-                    Toast.makeText(this@MainActivity, getString(R.string.exit), Toast.LENGTH_SHORT)
-                        .show()
-                }
-                backPressedTime = System.currentTimeMillis()
-            }
-        })
     }
 
     override fun onPause() {
