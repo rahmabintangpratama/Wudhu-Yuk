@@ -39,14 +39,6 @@ class SplashActivity : AppCompatActivity() {
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P) {
-            showUnsupportedVersionDialog()
-        } else {
-            Handler(Looper.getMainLooper()).postDelayed({
-                goToMainActivity()
-            }, SPLASH_DELAY)
-        }
-
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 if (backPressedTime + backPressedInterval > System.currentTimeMillis()) {
@@ -62,6 +54,14 @@ class SplashActivity : AppCompatActivity() {
                 backPressedTime = System.currentTimeMillis()
             }
         })
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P) {
+            showUnsupportedVersionDialog()
+        } else {
+            Handler(Looper.getMainLooper()).postDelayed({
+                goToMainActivity()
+            }, SPLASH_DELAY)
+        }
     }
 
     private fun showUnsupportedVersionDialog() {

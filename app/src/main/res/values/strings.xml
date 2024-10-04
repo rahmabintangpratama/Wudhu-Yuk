@@ -95,7 +95,7 @@
     <string name="zero">0</string>
     <string name="back_to_home">Kembali ke Menu Utama</string>
     <string name="tentang_aplikasi">Tentang Aplikasi</string>
-    <string name="tentang_field">Nama Aplikasi:\nWudhu Yuk\n\nVersi Aplikasi:\n1.0\n\nTanggal Rilis:\n27 September 2024\n\nTim Pengembang:\nRahma Bintang Pratama\nRiana Saferina Firdaus\nMirna Wati Maswain\nMauliya Azizatun Ni’mah</string>
+    <string name="tentang_field">Nama Aplikasi:\nWudhu Yuk\n\nVersi Aplikasi:\n1.0.0\n\nTanggal Rilis:\n27 September 2024\n\nTim Pengembang:\nRahma Bintang Pratama\nRiana Saferina Firdaus\nMirna Wati Maswain\nMauliya Azizatun Ni’mah</string>
     <string name="slogan">Sempurnakan wudhu, sempurnakan ibadah!</string>
     <string name="unsupported_android_dialog_message">Aplikasi ini hanya mendukung Android 9 (Pie) dan diatasnya\nAplikasi akan tertutup otomatis dalam 5 detik</string>
     <string name="unsupported_android_dialog_title">Versi Android tidak didukung</string>
